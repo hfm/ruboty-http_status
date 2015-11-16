@@ -40,7 +40,7 @@ module Ruboty
         end
 
         def url
-          "http://httpstatus.es/#{code}"
+          "https://httpstatus.com/#{code}"
         end
       end
     end

@@ -13,34 +13,15 @@ module Ruboty
         end
 
         def call
-          message.reply(reason_phrase)
+          message.reply(result)
         end
 
-        def reason_phrase
-          doc = parse
-
-          # If url doesn't exist,
-          # httpstatus.es returns 500 Internal Server Error
-          if doc == '500'
-            "HTTP Status Code #{code} doesn't exist."
-          else
-            doc.at_xpath(xpath).text
-          end
-        end
-
-        def xpath
-          '//div[@id="wrapper"]/div[@class="header"]/span[@class="status_title"]'
-        end
-
-        def parse
-          html = open(url) { |f| f.read }
-          Nokogiri::HTML.parse(html, nil, nil)
-        rescue OpenURI::HTTPError => error
-          error.io.status.first
+        def result
+          `curl -sS #{url}`
         end
 
         def url
-          "https://httpstatus.com/#{code}"
+          "http://httpstat.us/#{code}"
         end
       end
     end

@@ -17,7 +17,7 @@ module Ruboty
         end
 
         def result
-          `curl -sS -I #{url} | head -1 | cut -d' ' -f2-'`
+          `curl -sS -I #{url} | head -1 | cut -d' ' -f2-'`.chomp
         end
 
         def url

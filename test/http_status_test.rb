@@ -8,6 +8,10 @@ class TestHttpStatus < Test::Unit::TestCase
       @http_status = Ruboty::HttpStatus::Actions::HttpStatus.new(message)
     end
 
+    test 'Set url' do
+      assert_equal('http://httpstat.us/200', @http_status.url)
+    end
+
     test 'call methods return Continue' do
       assert_equal('200 OK', @http_status.result)
     end
@@ -18,6 +22,10 @@ class TestHttpStatus < Test::Unit::TestCase
       message = {}
       message[:code] = 900
       @http_status = Ruboty::HttpStatus::Actions::HttpStatus.new(message)
+    end
+
+    test 'Set url' do
+      assert_equal('http://httpstat.us/900', @http_status.url)
     end
 
     test 'call methods return error' do

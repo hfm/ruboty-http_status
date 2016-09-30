@@ -1,6 +1,6 @@
 # Ruboty::HttpStatus
 
-[![Build Status](https://travis-ci.org/tacahilo/ruboty-http_status.svg?branch=master)](https://travis-ci.org/tacahilo/ruboty-http_status)
+[![Build Status](https://travis-ci.org/hfm/ruboty-http_status.svg?branch=master)](https://travis-ci.org/hfm/ruboty-http_status)
 
 Display HTTP Status Code via [Ruboty](https://github.com/r7kamura/ruboty).
 

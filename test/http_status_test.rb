@@ -8,12 +8,8 @@ class TestHttpStatus < Test::Unit::TestCase
       @http_status = Ruboty::HttpStatus::Actions::HttpStatus.new(message)
     end
 
-    test 'Set url' do
-      assert_equal('http://httpstat.us/200', @http_status.url)
-    end
-
     test 'call methods return Continue' do
-      assert_equal('200 OK', @http_status.result)
+      assert_equal('OK', @http_status.status[200])
     end
   end
 
@@ -24,12 +20,8 @@ class TestHttpStatus < Test::Unit::TestCase
       @http_status = Ruboty::HttpStatus::Actions::HttpStatus.new(message)
     end
 
-    test 'Set url' do
-      assert_equal('http://httpstat.us/900', @http_status.url)
-    end
-
     test 'call methods return error' do
-      assert_equal("900 900 Unknown Code", @http_status.result)
+      assert_nil @http_status.status[900]
     end
   end
 end

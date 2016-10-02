@@ -15,8 +15,15 @@ gem 'ruboty-http_status'
 
 ## Usage
 
-```
+```rb
 http <code>
+```
+
+or
+
+```rb
+# bot name
+@ruboty <code>
 ```
 
 ## Contributing

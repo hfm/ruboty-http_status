@@ -18,6 +18,7 @@ module Ruboty
             100 => 'Continue',
             101 => 'Switching Protocols',
             102 => 'Processing (WebDAV)',
+            103 => 'Early Hints',
 
             200 => 'OK',
             201 => 'Created',
